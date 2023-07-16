@@ -1,2 +1,68 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	// localStorage.currentState
+	let clicked = false;
+</script>
+
+<button on:click={() => (clicked = !clicked)}>Click me</button>
+<svelte:head>
+	{#if clicked}
+		<style>
+			header {
+				background-color: #ff5722 !important;
+			}
+			nav {
+				background-color: #2169f3 !important;
+			}
+			main {
+				background-color: #4caf50 !important;
+			}
+			section {
+				background-color: #ff9800 !important;
+			}
+			article {
+				background-color: #9c27b0 !important;
+			}
+			aside {
+				background-color: #607d8b !important;
+			}
+			footer {
+				background-color: #795548 !important;
+			}
+			figure {
+				background-color: #ffc107 !important;
+			}
+			div {
+				background-color: cornflowerblue !important;
+			}
+			p {
+				background-color: #333333 !important;
+			}
+			a {
+				background-color: #c196c3 !important;
+			}
+			h1 {
+				background-color: #f06493 !important;
+			}
+			h2 {
+				background-color: #ee4c83 !important;
+			}
+			h3 {
+				background-color: #eb3573 !important;
+			}
+			h4 {
+				background-color: #e91e63 !important;
+			}
+			h5 {
+				background-color: #d81558 !important;
+			}
+			h6 {
+				background-color: #c1134e !important;
+			}
+			* {
+				color: black !important;
+				border-color: transparent !important;
+				outline-color: transparent !important;
+			}
+		</style>
+	{/if}
+</svelte:head>
