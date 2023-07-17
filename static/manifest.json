@@ -3,19 +3,29 @@
 	"description": "A browser extension made with Svelte Kit",
 	"version": "0.0.1",
 	"manifest_version": 3,
-	"permissions": ["activeTab"],
+	"permissions": ["activeTab", "scripting"],
 	"action": {
 		"default_title": "Svelte Extension",
-		"default_icon": "favicon.png",
-		"default_popup": "index.html"
+		"default_icon": {
+			"48": "favicon.png"
+		}
+	},
+	"icons": {
+		"48": "favicon.png"
+	},
+	"background": {
+		"service_worker": "background.js"
 	},
 	"content_scripts": [
 		{
-			"matches": ["<all_urls>"],
-			"css": ["semantic-colors.css"]
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content_script.js"]
 		}
 	],
-	"icons": {
-		"48": "favicon.png"
-	}
+	"web_accessible_resources": [
+		{
+			"resources": ["semantic-colors.css"],
+			"matches": ["http://*/*", "https://*/*"]
+		}
+	]
 }
