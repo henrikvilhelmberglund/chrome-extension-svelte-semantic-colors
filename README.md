@@ -8,6 +8,7 @@ Not super clean/functional yet! Also not on store, need to compile and load it:
 1. Open a website, you should see ugly colors
 
 One color: not very semantic
+
 Many colors: semantic! nice!
 
 
